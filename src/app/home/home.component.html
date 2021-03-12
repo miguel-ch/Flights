@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="flight_pane">
+
+        <!--Search options-->
+        <div>
+            <select class="cmb-origin">
+                <option value="from" disabled selected>From</option>
+            </select>
+            <select class="cmb-destination">
+                <option value="to" disabled selected>To</option>
+            </select>
+            <button (click)='getFlights()'>See</button>
+        </div>
+
+        <!--Flights table-->
+        <table class="tbl_flights">
+
+            <!--Table header-->
+            <tr>
+                <th>Number</th>
+                <th>Origin</th>
+                <th>Destination</th>
+                <th>Depart</th>
+                <th>Arrive</th>
+                <th>Nonstop</th>
+            </tr>
+
+            <!--Table rows-->
+            <tr *ngFor="let flight of flights">
+                <td>
+                    <div class="flight_number">{{flight.flightNumber}}</div>
+                </td>
+                <td>
+                    <div class="flight_origin">{{flight.origin}}</div>
+                </td>
+                <td>
+                    <div class="flight_destination">{{flight.destination}}</div>
+                </td>
+                <td>
+                    <div class="departs">{{flight.depart | date}}</div>
+                </td>
+                <td>
+                    <div class="arrives">{{flight.arrive | date}}</div>
+                </td>
+                <td>
+                    <div [ngClass]="flight.nonstop ? 'tbl_boolean yes': 'tbl_boolean no'">{{flight.nonstop ? 'Yes' : 'No'}}</div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

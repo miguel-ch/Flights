@@ -1,0 +1,23 @@
+.container {
+    width: 100vw;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .cnt-flight-manage {
+        width: 80%;
+        background: white;
+        padding: 5px;
+        margin: 5px 0;
+        p {
+            margin-bottom: 5px;
+        }
+    }
+    .cnt-flight-crud {
+        width: 80%;
+        background: chocolate;
+        padding: 5px;
+        margin: 5px 0;
+    }
+}
